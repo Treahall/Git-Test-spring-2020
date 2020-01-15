@@ -11,14 +11,18 @@ namespace GitTest
         static void Main(string[] args)
         {
             Random rand = new Random();
-            int MyNumber;
+            int MyNumber; int Min;int Max;
             int Guess;
             int Counter = 0;
+            Console.Write("Give me your first (lower) number: ");
+            Min = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Give me your Second (higher) number: ");
+            Max = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("I am thinking of a number between 0 and 100.");
+            Console.WriteLine($"I am thinking of a number between {Min} and {Max}.");
             Console.Write("Try to guess what I am thinking: ");
 
-            MyNumber = rand.Next(0, 100);
+            MyNumber = rand.Next(Min, Max);
             do
             {
                 Guess = Convert.ToInt32(Console.ReadLine());
